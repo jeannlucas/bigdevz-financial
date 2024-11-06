@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: bigdevz-finance-postgres
+    environment:
+      POSTGRES_USER: bigdevz
+      POSTGRES_PASSWORD: bigdevz
+      POSTGRES_DB: bigdevz_finance
+    ports:
+      - 5432:5432
+    volumes:
+      - ./.postgres-data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  .postgres-data:
